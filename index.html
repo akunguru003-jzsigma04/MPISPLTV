@@ -119,16 +119,14 @@ body:has(#cover.on){background:radial-gradient(circle at 20% 10%,#2563eb 0,#1e40
 <g fill="#fff"><circle cx="30" cy="14" r="1.3"><animate attributeName="opacity" values="1;.2;1" dur="2.2s" repeatCount="indefinite"/></circle><circle cx="95" cy="26" r="1"><animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/></circle><circle cx="160" cy="12" r="1.2"><animate attributeName="opacity" values="1;.2;1" dur="2.8s" repeatCount="indefinite"/></circle><circle cx="248" cy="18" r="1"><animate attributeName="opacity" values=".3;1;.3" dur="2s" repeatCount="indefinite"/></circle><circle cx="320" cy="10" r="1.3"><animate attributeName="opacity" values="1;.2;1" dur="3s" repeatCount="indefinite"/></circle><circle cx="372" cy="30" r="1"><animate attributeName="opacity" values=".2;1;.2" dur="2.4s" repeatCount="indefinite"/></circle></g>
 <!-- awan -->
 <g fill="#fff" opacity=".22"><g><animateTransform attributeName="transform" type="translate" values="-90 0;430 0" dur="42s" repeatCount="indefinite"/><ellipse cx="0" cy="44" rx="26" ry="6"/><ellipse cx="16" cy="39" rx="16" ry="6"/><ellipse cx="-14" cy="40" rx="12" ry="5"/></g><g><animateTransform attributeName="transform" type="translate" values="-200 0;320 0" dur="58s" repeatCount="indefinite"/><ellipse cx="0" cy="72" rx="22" ry="5"/><ellipse cx="12" cy="67" rx="13" ry="5"/></g></g>
-<!-- dua garis berpotongan di matahari = titik potong -->
-<line x1="40" y1="28" x2="360" y2="202" stroke="#7dd3fc" stroke-width="3" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="400"><animate attributeName="stroke-dashoffset" to="0" dur="2s" fill="freeze"/></line>
-<line x1="40" y1="184" x2="360" y2="46" stroke="#fff3b0" stroke-width="3" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="400"><animate attributeName="stroke-dashoffset" to="0" dur="2s" begin=".8s" fill="freeze"/></line>
 <!-- matahari -->
-<circle cx="200" cy="115" r="42" fill="#fde047" opacity=".25"><animate attributeName="r" values="38;48;38" dur="3s" repeatCount="indefinite"/></circle>
+<g transform="translate(0 -19)"><circle cx="200" cy="115" r="42" fill="#fde047" opacity=".25"><animate attributeName="r" values="38;48;38" dur="3s" repeatCount="indefinite"/></circle>
 <g stroke="#fde047" stroke-width="2.5" stroke-linecap="round" opacity=".85"><animateTransform attributeName="transform" type="rotate" from="0 200 115" to="360 200 115" dur="30s" repeatCount="indefinite"/><path d="M200 63V72M200 158V167M148 115H157M243 115H252M163 78l6 6M231 146l6 6M237 78l-6 6M169 146l-6 6"/></g>
 <circle cx="200" cy="115" r="26" fill="url(#cvsSun)"/>
-<g font-weight="700"><g transform="translate(50 36.5) rotate(28.5)"><text y="-8" font-size="11" fill="#bae6fd">x + y + z = 6</text><text y="15" font-size="8.5" font-style="italic" font-weight="400" fill="#bae6fd">Ikhtiar + Doa + Sabar</text></g><g transform="translate(245 95.6) rotate(-23.3)"><text y="-8" font-size="11" fill="#fff3b0">2x + y − z = 1</text><text y="15" font-size="8.5" font-style="italic" font-weight="400" fill="#fff3b0">Garis Keseimbangan</text></g></g>
-<text x="200" y="31" text-anchor="middle" font-size="8.5" font-weight="700" letter-spacing=".14em" fill="#fde68a">TITIK MIZAN (1, 2, 3)</text>
-<g stroke="#fde68a" stroke-width="1.4" fill="none" stroke-linecap="round"><path d="M200 42V58M194 58H206"/><g><animateTransform attributeName="transform" type="rotate" values="-5 200 42;5 200 42;-5 200 42" dur="3s" repeatCount="indefinite"/><path d="M184 42H216M184 42L179 52M184 42L189 52M216 42L211 52M216 42L221 52"/><path d="M178 52Q184 58 190 52ZM210 52Q216 58 222 52Z" fill="#fde68a"/></g></g>
+</g>
+<!-- tiga bidang (tiga persamaan) bertemu di satu titik = tripel penyelesaian --><g transform="translate(200 96)"><g opacity="0" data-a="1"><animate attributeName="opacity" values="0;1" dur=".7s" begin="0.2s" fill="freeze"/><animateTransform attributeName="transform" type="scale" values=".25;1" dur="1.1s" begin="0.2s" fill="freeze"/><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -2.5;0 0" dur="4s" begin="1.4s" repeatCount="indefinite"/><polygon points="0.0,50.0 -86.6,0.0 0.0,-50.0 86.6,0.0" fill="#7dd3fc" fill-opacity=".34" stroke="#7dd3fc" stroke-width="1.6" stroke-linejoin="round"/></g></g></g><g transform="translate(200 96)"><g opacity="0" data-a="1"><animate attributeName="opacity" values="0;1" dur=".7s" begin="1.2s" fill="freeze"/><animateTransform attributeName="transform" type="scale" values=".25;1" dur="1.1s" begin="1.2s" fill="freeze"/><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -2.5;0 0" dur="4s" begin="2.4s" repeatCount="indefinite"/><polygon points="-43.3,-5.0 -43.3,40.0 43.3,-10.0 43.3,-55.0" fill="#fde68a" fill-opacity=".34" stroke="#fde68a" stroke-width="1.6" stroke-linejoin="round"/></g></g></g><g transform="translate(200 96)"><g opacity="0" data-a="1"><animate attributeName="opacity" values="0;1" dur=".7s" begin="2.2s" fill="freeze"/><animateTransform attributeName="transform" type="scale" values=".25;1" dur="1.1s" begin="2.2s" fill="freeze"/><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -2.5;0 0" dur="4s" begin="3.4000000000000004s" repeatCount="indefinite"/><polygon points="43.3,-5.0 43.3,40.0 -43.3,-10.0 -43.3,-55.0" fill="#6ee7b7" fill-opacity=".34" stroke="#6ee7b7" stroke-width="1.6" stroke-linejoin="round"/></g></g></g><g opacity="0" data-a="1"><animate attributeName="opacity" values="0;1" dur=".5s" begin="2.9s" fill="freeze"/><circle cx="200" cy="96" r="4" fill="#fff" stroke="#fde047" stroke-width="2"/><circle cx="200" cy="96" r="5" fill="none" stroke="#fff3b0" stroke-width="1.4"><animate attributeName="r" values="5;20;5" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0;.9" dur="2.6s" repeatCount="indefinite"/></circle></g><g opacity="0" data-a="1"><animate attributeName="opacity" values="0;1" dur=".6s" begin="1.0s" fill="freeze"/><path d="M104 77L124 100" stroke="#7dd3fc" stroke-width="1.1" stroke-dasharray="3 2.4" fill="none" opacity=".9"/><rect x="10" y="46" width="114" height="31" rx="8" fill="#0b1d57" fill-opacity=".6" stroke="#7dd3fc" stroke-opacity=".85"/><text x="18" y="59.5" font-size="11" font-weight="700" fill="#7dd3fc">x + y + z = 6</text><text x="18" y="71" font-size="8.3" font-style="italic" fill="#7dd3fc">Ikhtiar + Doa + Sabar</text></g><g opacity="0" data-a="1"><animate attributeName="opacity" values="0;1" dur=".6s" begin="2.0s" fill="freeze"/><path d="M276 36L243 46" stroke="#fde68a" stroke-width="1.1" stroke-dasharray="3 2.4" fill="none" opacity=".9"/><rect x="276" y="18" width="114" height="31" rx="8" fill="#0b1d57" fill-opacity=".6" stroke="#fde68a" stroke-opacity=".85"/><text x="284" y="31.5" font-size="11" font-weight="700" fill="#fde68a">2x + y − z = 1</text><text x="284" y="43" font-size="8.3" font-style="italic" fill="#fde68a">Bidang Keseimbangan</text></g><g opacity="0" data-a="1"><animate attributeName="opacity" values="0;1" dur=".6s" begin="3.0s" fill="freeze"/><path d="M276 74L240 98" stroke="#6ee7b7" stroke-width="1.1" stroke-dasharray="3 2.4" fill="none" opacity=".9"/><rect x="276" y="58" width="114" height="31" rx="8" fill="#0b1d57" fill-opacity=".6" stroke="#6ee7b7" stroke-opacity=".85"/><text x="284" y="71.5" font-size="11" font-weight="700" fill="#6ee7b7">x − y + 2z = 5</text><text x="284" y="83" font-size="8.3" font-style="italic" fill="#6ee7b7">Bidang Syukur</text></g>
+<g transform="translate(0 -20)"><text x="200" y="31" text-anchor="middle" font-size="8.5" font-weight="700" letter-spacing=".14em" fill="#fde68a">TITIK MIZAN (1, 2, 3)</text>
+<g stroke="#fde68a" stroke-width="1.4" fill="none" stroke-linecap="round"><path d="M200 42V58M194 58H206"/><g><animateTransform attributeName="transform" type="rotate" values="-5 200 42;5 200 42;-5 200 42" dur="3s" repeatCount="indefinite"/><path d="M184 42H216M184 42L179 52M184 42L189 52M216 42L211 52M216 42L221 52"/><path d="M178 52Q184 58 190 52ZM210 52Q216 58 222 52Z" fill="#fde68a"/></g></g></g>
 <!-- pantai: masjid & kelapa -->
 <g fill="#081a4a"><path d="M0 140V122Q40 112 85 128Q110 136 125 140Z"/><rect x="32" y="108" width="30" height="13"/><path d="M36 108a11 11 0 0 1 22 0Z"/><rect x="68" y="96" width="4" height="26"/><path d="M66 96L70 86L74 96Z"/></g>
 <path d="M47 89a4 4 0 1 0 3 6a3.2 3.2 0 1 1-3-6Z" fill="#facc15"/>
@@ -156,7 +154,7 @@ body:has(#cover.on){background:radial-gradient(circle at 20% 10%,#2563eb 0,#1e40
 <g transform="translate(30 200)"><g opacity="0"><animateMotion dur="5s" begin="2s" repeatCount="indefinite" rotate="auto" path="M0 0Q26 -50 52 0" keyPoints="0;1;1" keyTimes="0;.5;1" calcMode="linear"/><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.04;.48;.52;1" dur="5s" begin="2s" repeatCount="indefinite"/><g transform="scale(1.1)"><path d="M-10 0Q0-8 10 0Q0 8-10 0Z" fill="#7dd3fc"/><path d="M-10 0L-17-6V6Z" fill="#38bdf8"/><circle cx="6" cy="-1" r="1.2" fill="#0b2a6b"/></g></g></g>
 <path d="M0 210Q50 204 100 210T200 210T300 210T400 210T500 210T600 210T700 210T800 210V240H0Z" fill="#0b2a6b"><animateTransform attributeName="transform" type="translate" values="-200 0;0 0" dur="5s" repeatCount="indefinite"/></path>
 <path d="M0 224Q50 219 100 224T200 224T300 224T400 224T500 224T600 224T700 224T800 224V240H0Z" fill="#081f55"><animateTransform attributeName="transform" type="translate" values="0 0;-200 0" dur="4s" repeatCount="indefinite"/></path>
-</g>
+<g opacity="0" data-a="1"><animate attributeName="opacity" values="0;1" dur=".8s" begin="3.4s" fill="freeze"/><text x="200" y="233" text-anchor="middle" font-size="8.2" font-weight="700" letter-spacing=".04em" fill="#dbeafe">x = Ikhtiar  •  y = Doa  •  z = Sabar  →  (1, 2, 3)</text></g></g>
 <rect x="1" y="1" width="398" height="238" rx="14" fill="none" stroke="#facc15" stroke-opacity=".7" stroke-width="1.5"/>
 </svg>
 <div class="cv-info">Kurikulum Merdeka • Kurikulum Berbasis Cinta<br><b>MAN 1 Boalemo</b></div>
@@ -231,7 +229,7 @@ body:has(#cover.on){background:radial-gradient(circle at 20% 10%,#2563eb 0,#1e40
    Selama belum diganti, aplikasi tetap jalan seperti biasa (data hanya
    disimpan di perangkat), tanpa terhubung ke Google Sheets.
    ================================================================ */
-const GAS_URL = "";   /* TEMPEL di sini URL Web App Google Apps Script MATERI 3 (berakhiran /exec). Jangan pakai URL Materi 2 agar data tidak tercampur. */
+const GAS_URL = "https://script.google.com/macros/s/AKfycbyWWyP9sbOehae2bNV0hfG2N2Z1OsvEKU4Z1_A6ejAHiSMHmN4oehv5Gh9OqzaXBqKuHQ/exec";   /* TEMPEL di sini URL Web App Google Apps Script MATERI 3 (berakhiran /exec). Jangan pakai URL Materi 2 agar data tidak tercampur. */
 
 /* Zona waktu untuk Jadwal Pengerjaan: 8 = WITA (Gorontalo), 7 = WIB, 9 = WIT */
 const ZONA_WAKTU_JAM = 8;
@@ -243,7 +241,7 @@ function mjFb(r){try{const w=document.createTreeWalker(r,NodeFilter.SHOW_TEXT,{a
 const mj=e=>{if(window.MathJax&&MathJax.typesetPromise)return MathJax.typesetPromise([e||document.body]).catch(()=>{});if(window.__mjFail)mjFb(e||document.body)};
 setTimeout(()=>{if(!(window.MathJax&&MathJax.typesetPromise)){window.__mjFail=1;mjFb(document.body)}},5000);
 const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){let j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
-function show(id){if(window.camarHook)camarHook(id);if(window.homeHook)homeHook(id);if(id=='dash'&&!S.guru)id='form';if(id!='play')clearInterval(S.ti);document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');document.body.classList.toggle('gm',id=='dash');scrollTo(0,0);if(id=='menu')menu();if(id=='dash')tchRender();if(S.n)sv();sess(id);mj($(id))}
+function show(id){if(window.movStop)movStop();if(window.camarHook)camarHook(id);if(window.homeHook)homeHook(id);if(id=='dash'&&!S.guru)id='form';if(id!='play')clearInterval(S.ti);document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');document.body.classList.toggle('gm',id=='dash');scrollTo(0,0);if(id=='menu')menu();if(id=='dash')tchRender();if(S.n)sv();sess(id);mj($(id))}
 function modal(h){$('modc').innerHTML=h+'<div class="center"><button class="btn" onclick="$(\'mod\').classList.remove(\'on\')">Kembali ke Cover</button></div>';$('mod').classList.add('on');mj($('modc'))}
 const AY=[{a:'فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا',r:'QS. Al-Insyirah [94]: 5–6',t:'"Maka sesungguhnya beserta kesulitan ada kemudahan. Sesungguhnya beserta kesulitan ada kemudahan."',k:'Soal yang tampak sulit selalu punya jalan: eliminasi lalu substitusi. Pilihlah jalan yang paling mudah bagimu, lalu tempuh dengan sabar.'},
 {a:'وَأَوْفُوا الْكَيْلَ إِذَا كِلْتُمْ وَزِنُوا بِالْقِسْطَاسِ الْمُسْتَقِيمِ ۚ ذَٰلِكَ خَيْرٌ وَأَحْسَنُ تَأْوِيلًا',r:'QS. Al-Isra [17]: 35',t:'"Dan sempurnakanlah takaran apabila kamu menakar, dan timbanglah dengan neraca yang benar. Itulah yang lebih utama (bagimu) dan lebih baik akibatnya."',k:'Memeriksa hasil pada ketiga persamaan adalah wujud jujur dan teliti, seperti menimbang dengan neraca yang benar.'}];
@@ -315,7 +313,7 @@ const L=[
 ];
 function lstart(){S.ls=S.learn.findIndex(v=>!v);if(S.ls<0)S.ls=0;show('learn');lr()}
 function lr(){let m=L[S.ls],n=S.learn.filter(Boolean).length;$('lc').textContent=`Slide ${S.ls+1}/6`;$('lb').style.width=n/6*100+'%';
-$('ls').innerHTML=`<h2>${m.h}</h2><p>${m.c}</p><div class="box loc">🏞️ <b>Konteks Lokal:</b> ${m.l}</div><div class="box kbc">💗 <b>KBC:</b> ${m.k}</div>${ay(m.y)}`;
+$('ls').innerHTML=`<h2>${m.h}</h2><p>${m.c}</p><button class="btn alt" onclick="simstart(${[0,0,1,2,5,4][S.ls]})">🎬 Tonton Animasi Materi</button><div class="box loc">🏞️ <b>Konteks Lokal:</b> ${m.l}</div><div class="box kbc">💗 <b>KBC:</b> ${m.k}</div>${ay(m.y)}`;
 $('lnx').disabled=!S.learn[S.ls];runQ(m.q,$('lq'),ok=>{S.learn[S.ls]=true;$('lnx').disabled=false;$('lb').style.width=S.learn.filter(Boolean).length/6*100+'%'});mj($('ls'))}
 function ln(d){let i=S.ls+d;if(d>0&&S.ls==5){confetti();modal2('🎉 Semua materi tuntas! Menu <b>BERMAIN</b> terbuka.<div class="box kbc">🌿 <b>Hikmah Hari Ini:</b> '+HK[0]+'</div>');show('menu');return}if(i<0||i>5)return;if(d>0&&!S.learn[S.ls])return;S.ls=i;lr()}
 
@@ -441,21 +439,194 @@ return [['🌿','Penjaga Mangrove','Selesaikan semua 6 slide di menu Belajar.',l
 function bdstart(){show('kon');let L=bdList(),n=L.filter(b=>b[3]).length;$('kh').textContent='🏅 Ruang Lencana';
 $('kb').innerHTML=`<div class="box">Terkumpul <b>${n}/${L.length}</b> lencana & pencapaian</div><div class="bar"><i style="width:${n/L.length*100}%"></i></div>`+L.map(b=>`<div class="bd ${b[3]?'':'lk'}"><span>${b[0]}</span><div><b>${b[1]}</b> ${b[3]?'✅':'🔒'}<div class="sm">Syarat: ${b[2]}</div><div class="sm"><i>${b[4]}</i></div></div></div>`).join('')}
 /* ===== LAB SIMULASI ===== */
+/* ===== ANIMASI MATERI (gaya Flash): mesin timeline berbasis waktu, bisa jeda, ulang, geser, dan ganti kecepatan ===== */
+const MV=(()=>{
+const NS='http://www.w3.org/2000/svg',COL={x:'#fde047',y:'#7dd3fc',z:'#6ee7b7',w:'#ffffff',r:'#fca5a5',c:'#fde68a'},FF="'Segoe Print','Comic Sans MS',Poppins,sans-serif";
+const E={lin:x=>x,out:x=>1-Math.pow(1-x,3),in:x=>x*x*x,io:x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,
+ back:x=>{const c=2.70158;return 1+c*Math.pow(x-1,3)+1.70158*Math.pow(x-1,2)},
+ bounce:x=>{const n=7.5625,d=2.75;if(x<1/d)return n*x*x;if(x<2/d)return n*(x-=1.5/d)*x+.75;if(x<2.5/d)return n*(x-=2.25/d)*x+.9375;return n*(x-=2.625/d)*x+.984375},
+ elastic:x=>x<=0?0:x>=1?1:Math.pow(2,-10*x)*Math.sin((x*10-.75)*(2*Math.PI)/3)+1};
+const cl=(v,a,b)=>Math.max(a,Math.min(b,v)),fmt=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+$)/g,'');
+const mk=(tag,at,par,tx)=>{const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(tx!=null)e.textContent=tx;if(par)par.appendChild(e);return e};
+/* ---- pembungkus objek yang bisa dianimasikan ---- */
+function Obj(el,bx,by){this.el=el;this.bx=bx||0;this.by=by||0;this.tr={};this.fx=[];this.dyn=false;this.osc=null}
+Obj.prototype.t=function(p,t0,t1,a,b,e){(this.tr[p]=this.tr[p]||[]).push({t0:t0,t1:t1,a:a,b:b,e:E[e||'out']});this.tr[p].sort((m,n)=>m.t0-n.t0);this.dyn=true;return this};
+Obj.prototype.show=function(t0,d,e){return this.t('op',t0,t0+(d||400),0,1,'lin').t('sc',t0,t0+(d||400)*1.4,.2,1,e||'back')};
+Obj.prototype.hide=function(t0,d){return this.t('op',t0,t0+(d||400),1,0,'lin')};
+Obj.prototype.fxs=function(t0,t1,run){this.fx.push({t0:t0,t1:t1,run:run});return this};
+Obj.prototype.step=function(list){const te=this.tx||this.el;list.forEach(([t,s])=>this.fx.push({t0:t,t1:t,run:()=>{te.textContent=s}}));return this};
+Obj.prototype.count=function(t0,t1,a,b,f){const te=this.tx||this.el;return this.fxs(t0,t1,t=>{te.textContent=(f||fmt)(a+(b-a)*cl((t-t0)/(t1-t0),0,1))})};
+Obj.prototype.typed=function(t0,t1,s){const te=this.tx||this.el;return this.fxs(t0,t1,t=>{te.textContent=s.slice(0,Math.ceil(s.length*cl((t-t0)/(t1-t0),0,1)))})};
+const val=(o,p,t)=>{const L=o.tr[p];if(!L)return null;let c=null;for(const k of L){if(t>=k.t0)c=k;else break}if(!c)return L[0].a;const q=c.t1>c.t0?cl((t-c.t0)/(c.t1-c.t0),0,1):1;return c.a+(c.b-c.a)*c.e(q)};
+function draw(o,t){if(o.dyn){let x=val(o,'x',t),y=val(o,'y',t),s=val(o,'sc',t),r=val(o,'rot',t),op=val(o,'op',t);x=x==null?0:x;y=y==null?0:y;if(o.osc)y+=o.osc[0]*Math.sin(t/o.osc[1]*6.2832);
+ o.el.setAttribute('transform','translate('+(o.bx+x)+' '+(o.by+y)+') rotate('+(r==null?0:r)+') scale('+(s==null?1:s)+')');if(op!=null)o.el.setAttribute('opacity',op<0?0:op>1?1:op)}
+ if(o.fx.length){let any=false;for(const f of o.fx){if(t>=f.t0){f.run(t);any=true}}if(!any)o.fx[0].run(o.fx[0].t0)}}
+/* ---- pembantu gambar ---- */
+function Scene(title,dur,cues,build){this.title=title;this.dur=dur;this.cues=cues;this.build=build;this.objs=[];this.g=null}
+function ctx(sc,g){const A=(tag,at,par,tx)=>mk(tag,at,par||g,tx),
+ G=(par,x,y)=>{const o=new Obj(mk('g',{},par||g),x,y);o.el.setAttribute('transform','translate('+x+' '+y+')');sc.objs.push(o);return o},
+ T=(par,x,y,s,fill,fs,anc)=>{const o=G(par,x,y);o.tx=mk('text',{x:0,y:0,fill:fill||'#fff','font-size':fs||20,'font-weight':700,'font-family':FF,'text-anchor':anc||'start'},o.el,s);return o};
+ return{A:A,G:G,T:T}}
+function fish(par,col,s){const o=mk('g',{transform:'scale('+(s||1)+')'},par);mk('path',{d:'M-11 0Q0-9 11 0Q0 9-11 0Z',fill:col,stroke:'#0b2a6b','stroke-width':.8},o);mk('path',{d:'M-10 0L-18-6V6Z',fill:col,stroke:'#0b2a6b','stroke-width':.8},o);mk('circle',{cx:6,cy:-1.5,r:1.4,fill:'#0b2a6b'},o);return o}
+function person(c,sc,kind,x,y){const o=c.G(null,x,y),e=o.el;
+ if(kind=='F'){mk('rect',{x:-26,y:22,width:52,height:50,rx:16,fill:'#38bdf8'},e);mk('circle',{r:28,fill:'#a78bfa'},e);mk('path',{d:'M-28 2Q-30 34 0 38Q30 34 28 2Z',fill:'#a78bfa'},e);mk('ellipse',{rx:17,ry:18,cy:2,fill:'#fcd9b6'},e);mk('circle',{cx:-10,cy:9,r:3.4,fill:'#fda4af',opacity:.6},e);mk('circle',{cx:10,cy:9,r:3.4,fill:'#fda4af',opacity:.6},e)}
+ else{mk('rect',{x:-28,y:22,width:56,height:50,rx:16,fill:'#f59e0b'},e);mk('ellipse',{rx:19,ry:20,cy:2,fill:'#e8b98f'},e);mk('path',{d:'M-20 -6Q-20 -26 0 -26Q20 -26 20 -6Z',fill:'#111827'},e);mk('path',{d:'M-9 8Q-4 4 0 8Q4 4 9 8Q4 12 0 9Q-4 12-9 8Z',fill:'#1f2937'},e)}
+ const eL=mk('ellipse',{cx:-6.5,cy:-1,rx:2.2,ry:2.6,fill:'#1e293b'},e),eR=mk('ellipse',{cx:6.5,cy:-1,rx:2.2,ry:2.6,fill:'#1e293b'},e),mo=mk('ellipse',{cx:0,cy:kind=='F'?11:14,rx:4,ry:1.2,fill:'#be123c'},e);
+ o.osc=[1.6,2600];o.dyn=true;
+ o.fxs(0,0,t=>{const bl=(t%3600)<130;eL.setAttribute('ry',bl?.4:2.6);eR.setAttribute('ry',bl?.4:2.6);let sp=false;for(let i=sc.cues.length-1;i>=0;i--){const q=sc.cues[i];if(t>=q[0]){const nx=sc.cues[i+1],end=nx?nx[0]-700:sc.dur;sp=q[1]==kind&&t<end&&t<q[0]+q[2].length*55;break}}mo.setAttribute('ry',sp?1.4+3.4*Math.abs(Math.sin(t/105)):1.2)});
+ return o}
+function poof(c,x,y,t0,col){for(let i=0;i<9;i++){const a=i/9*6.2832,p=c.G(null,x,y);mk('circle',{r:i%2?3.4:2.4,fill:i%3?col||'#fde047':'#fff'},p.el);p.t('op',t0,t0+60,0,1,'lin').t('op',t0+60,t0+800,1,0,'lin').t('x',t0,t0+800,0,Math.cos(a)*36,'out').t('y',t0,t0+800,0,Math.sin(a)*36,'out').t('sc',t0,t0+800,1,.2,'lin')}}
+function eqRow(c,par,x,y,lab,terms,fs,cols){const r=c.G(par,x,y);fs=fs||20;cols=cols||[0,100,200,290];const cc=[COL.x,COL.y,COL.z,COL.w],o={g:r,t:[]};if(lab)o.lab=c.T(r.el,-58,0,lab,COL.c,fs-3);terms.forEach((s,i)=>{const q=c.T(r.el,cols[i],0,s,cc[i],fs);o.t.push(q)});return o}
+function board(c,g){c.A('rect',{x:0,y:0,width:640,height:330,fill:'#dbeafe'},g);c.A('rect',{x:14,y:10,width:612,height:238,rx:12,fill:'#14532d',stroke:'#92400e','stroke-width':8},g);c.A('rect',{x:30,y:246,width:580,height:7,rx:3,fill:'#b45309'},g)}
+function tray(c,sc,g,x,y,t0,fill){const r=c.G(g,x,y);r.show(t0,500);const vals=[];[['x',COL.x],['y',COL.y],['z',COL.z]].forEach((a,i)=>{mk('rect',{x:0,y:i*52,width:112,height:44,rx:12,fill:'#052e16',stroke:a[1],'stroke-width':2},r.el);mk('circle',{cx:22,cy:i*52+22,r:15,fill:a[1]},r.el);mk('text',{x:22,y:i*52+28,'text-anchor':'middle','font-size':17,'font-weight':800,fill:'#14532d','font-family':FF},r.el,a[0]);const v=mk('text',{x:44,y:i*52+28,'font-size':15,'font-weight':700,fill:'#fff','font-family':FF},r.el,'?');const o=new Obj(v);sc.objs.push(o);o.step([[0,fill&&fill[i]?fill[i]:'?']]);vals.push(o)});return{g:r,v:vals,cx:x+78,cy:i=>y+i*52+22,sy:i=>y+i*52+22}}
+function token(c,g,k,x0,y0,x1,y1,t0,t1,label,fillCol){const o=c.G(g,x0,y0);mk('circle',{r:17,fill:fillCol,stroke:'#fff','stroke-width':2},o.el);mk('text',{y:6,'text-anchor':'middle','font-size':16,'font-weight':800,fill:'#14532d','font-family':FF},o.el,label);o.t('op',t0,t0+120,0,1,'lin').t('x',t0,t1,0,x1-x0,'io').t('y',t0,t1,0,y1-y0,'io').t('sc',t1,t1+260,1,.1,'in').t('op',t1,t1+260,1,0,'lin');return o}
+/* ================= ADEGAN ================= */
+const FNAME={F:'Fatimah',H:'Pak Hamid'};
+const SC=[
+new Scene('Memodelkan: tiga catatan menjadi tiga persamaan',22000,[
+ [500,'F','Assalamu’alaikum! Aku Fatimah. Di lapak Ayah ada tiga catatan belanja pelanggan.'],
+ [3500,'H','Bu Aminah beli 1 kg cakalang, 2 kg tuna, dan 1 kg tongkol: Rp190.000.'],
+ [7500,'H','Bu Rahma beli 2 cakalang, 1 tuna, 1 tongkol: Rp170.000. Bu Sari beli 1 cakalang, 1 tuna, 2 tongkol: Rp160.000.'],
+ [12500,'F','Kita misalkan harga sekilo cakalang = x, tuna = y, dan tongkol = z.'],
+ [16500,'F','Tiga catatan menjadi tiga persamaan dengan tiga variabel. Itulah SPLTV!']],
+ (sc,g)=>{const c=ctx(sc,g);c.A('rect',{x:0,y:0,width:640,height:330,fill:'#bfe7f9'},g);c.A('rect',{x:0,y:262,width:640,height:68,fill:'#fde68a'},g);
+ const aw=c.G(g,0,0);for(let i=0;i<10;i++)mk('rect',{x:70+i*50,y:0,width:50,height:42,fill:i%2?'#fff':'#ef4444'},aw.el);mk('path',{d:'M70 42H570L560 58Q530 46 500 58Q470 46 440 58Q410 46 380 58Q350 46 320 58Q290 46 260 58Q230 46 200 58Q170 46 140 58Q110 46 80 58Z',fill:'#dc2626'},aw.el);aw.t('y',0,1400,-70,0,'bounce');
+ person(c,sc,'F',50,236).show(300,500);person(c,sc,'H',592,236).show(300,500);
+ const names=['Bu Aminah','Bu Rahma','Bu Sari'],qty=[[1,2,1],[2,1,1],[1,1,2]],price=['Rp190.000','Rp170.000','Rp160.000'],cols=[COL.x,COL.y,COL.z],tms=[3500,7500,9500],cs=[];
+ names.forEach((n,i)=>{const k=c.G(g,125+i*145,88);mk('rect',{x:0,y:0,width:132,height:82,rx:10,fill:'#fffbeb',stroke:'#f59e0b','stroke-width':2.5},k.el);mk('text',{x:66,y:17,'text-anchor':'middle','font-size':12.5,'font-weight':800,fill:'#7c2d12','font-family':FF},k.el,n);
+  let px=20;qty[i].forEach((q,j)=>{for(let m=0;m<q;m++){const f=c.G(k.el,px+12,46,1);fish(f.el,cols[j],1);f.show(tms[i]+500+(px/20)*220,400);px+=26}});
+  mk('text',{x:66,y:74,'text-anchor':'middle','font-size':13,'font-weight':800,fill:'#166534','font-family':FF},k.el,price[i]);k.t('y',tms[i],tms[i]+1100,-130,0,'bounce').t('op',tms[i],tms[i]+150,0,1,'lin').t('op',16500,17300,1,.3,'lin');cs.push(k)});
+ const lg=c.G(g,330,76);[['x','cakalang',COL.x,-230],['y','tuna',COL.y,-60],['z','tongkol',COL.z,110]].forEach(a=>{const q=c.G(lg.el,a[3],0);fish(q.el,a[2],1);const tt=mk('text',{x:16,y:5,'font-size':13,'font-weight':800,fill:'#0f172a','font-family':FF},q.el,a[0]+' = harga '+a[1]);q.show(12500+(a[0]=='x'?0:a[0]=='y'?500:1000),500)});
+ const rs=[['(1)',['x','+ 2y','+ z','= 190000']],['(2)',['2x','+ y','+ z','= 170000']],['(3)',['x','+ y','+ 2z','= 160000']]];
+ c.A('rect',{x:112,y:176,width:424,height:100,rx:12,fill:'#14532d',opacity:.92},g);
+ rs.forEach((r,i)=>{const q=eqRow(c,g,190,206+i*28,r[0],r[1],20,[0,70,140,215]);q.g.t('op',16500+i*1400,17000+i*1400,0,1,'lin').t('x',16500+i*1400,17400+i*1400,-40,0,'out')});
+ const bn=c.G(g,320,298);mk('rect',{x:-170,y:-17,width:340,height:30,rx:15,fill:'#7c3aed'},bn.el);mk('text',{y:4,'text-anchor':'middle','font-size':14,'font-weight':800,fill:'#fff','font-family':FF},bn.el,'3 persamaan • 3 variabel = SPLTV');bn.show(20300,600,'elastic')}),
+new Scene('Eliminasi: hilangkan satu variabel dari dua pasang persamaan',30000,[
+ [500,'F','Pilih variabel yang paling mudah dihilangkan: z. Koefisien z di (1) dan (2) sama-sama 1.'],
+ [6000,'F','Pasangan pertama: (1) dikurangi (2). Suku x, y, dan z dikurangkan satu per satu.'],
+ [11000,'F','z lenyap karena 1z − 1z = 0. Tersisa −x + y = 20.000. Itu persamaan (4).'],
+ [16500,'F','Pasangan kedua: kalikan (1) dengan 2, lalu kurangkan dengan (3). Koefisien z jadi sama-sama 2.'],
+ [22000,'H','z lenyap lagi! Tersisa x + 3y = 220.000, persamaan (5). Ingat: variabel yang dihilangkan harus sama.'],
+ [27000,'F','Sekarang SPLTV sudah berubah menjadi SPLDV: persamaan (4) dan (5).']],
+ (sc,g)=>{const c=ctx(sc,g);board(c,g);person(c,sc,'F',60,282).show(300,500);person(c,sc,'H',582,282).show(300,500);
+ const CL=[0,80,160,240],R=[['(1)',['x','+ 2y','+ z','= 190000']],['(2)',['2x','+ y','+ z','= 170000']],['(3)',['x','+ y','+ 2z','= 160000']]],top=[];
+ R.forEach((r,i)=>{const q=eqRow(c,g,120,44+i*30,r[0],r[1],19,CL);q.g.show(400+i*300,500);top.push(q)});
+ [0,1].forEach(i=>{const rg=c.G(g,120+CL[2]+20,38+i*30);mk('ellipse',{rx:26,ry:15,fill:'none',stroke:'#ef4444','stroke-width':2.5},rg.el);rg.t('op',3800,4200,0,1,'lin').t('op',5600,6000,1,0,'lin');rg.fxs(3800,5800,t=>rg.el.setAttribute('opacity',.5+.5*Math.sin(t/120)))});
+ // pasangan 1
+ const A=eqRow(c,g,120,150,'',['x','+ 2y','+ z','= 190000'],19,CL),B=eqRow(c,g,120,178,'',['2x','+ y','+ z','= 170000'],19,CL),ms=c.T(g,66,182,'−',COL.r,26);
+ A.g.t('y',6000,7200,-106,0,'out').t('op',6000,6300,0,1,'lin').t('op',16000,16500,1,0,'lin');B.g.t('y',6300,7500,-104,0,'out').t('op',6300,6600,0,1,'lin').t('op',16000,16500,1,0,'lin');ms.t('op',7400,7800,0,1,'lin').t('sc',7400,8000,2,1,'bounce').t('op',16000,16500,1,0,'lin');
+ const ln=c.A('rect',{x:66,y:188,width:0,height:3,rx:1.5,fill:'#fff'},g),lo=new Obj(ln);sc.objs.push(lo);lo.fxs(8200,9000,t=>ln.setAttribute('width',420*cl((t-8200)/800,0,1)));lo.t('op',16000,16500,1,0,'lin');
+ const R1=eqRow(c,g,120,214,'(4)',['−x','+ y','0z','= 20000'],19,CL);R1.t.forEach((q,i)=>{q.t('op',11000+i*350,11400+i*350,0,1,'lin').t('sc',11000+i*350,11700+i*350,.3,1,'back')});R1.lab.t('op',11000,11400,0,1,'lin');R1.g.t('y',16000,17000,0,-80,'io');
+ poof(c,120+CL[2]+14,206,12600,COL.z);R1.t[2].t('op',12500,13300,1,0,'lin').t('rot',12400,12500,0,0,'lin');R1.t[2].step([[0,'0z']]);
+ const bx=c.A('rect',{x:62,y:196,width:440,height:28,rx:8,fill:'none',stroke:'#fde047','stroke-width':2.5},g),bo=new Obj(bx);sc.objs.push(bo);bo.t('op',13000,13500,0,1,'lin').t('op',15600,16200,1,0,'lin');
+ // pasangan 2
+ const A2=eqRow(c,g,120,164,'',['2x','+ 4y','+ 2z','= 380000'],19,CL),B2=eqRow(c,g,120,192,'',['x','+ y','+ 2z','= 160000'],19,CL),ms2=c.T(g,66,196,'−',COL.r,26),bd=c.G(g,520,164);mk('rect',{x:-30,y:-16,width:60,height:24,rx:12,fill:'#7c3aed'},bd.el);mk('text',{y:2,'text-anchor':'middle','font-size':14,'font-weight':800,fill:'#fff','font-family':FF},bd.el,'1 × 2');
+ [A2,B2].forEach((q,i)=>{q.g.t('op',17500+i*300,17900+i*300,0,1,'lin').t('x',17500+i*300,18500+i*300,-60,0,'out')});ms2.t('op',19000,19400,0,1,'lin').t('sc',19000,19600,2,1,'bounce');bd.show(17400,500,'elastic').t('op',19800,20200,1,0,'lin');
+ A2.t.forEach((q,i)=>q.step([[0,['x','+ 2y','+ z','= 190000'][i]],[17900,['2x','+ 4y','+ 2z','= 380000'][i]]]).t('sc',0,1,1,1,'lin').t('sc',17900,18300,1.3,1,'bounce'));
+ const ln2=c.A('rect',{x:66,y:202,width:0,height:3,rx:1.5,fill:'#fff'},g),lo2=new Obj(ln2);sc.objs.push(lo2);lo2.fxs(19800,20600,t=>ln2.setAttribute('width',420*cl((t-19800)/800,0,1)));
+ const R2=eqRow(c,g,120,230,'(5)',['x','+ 3y','0z','= 220000'],19,CL);R2.t.forEach((q,i)=>{q.t('op',22000+i*350,22400+i*350,0,1,'lin').t('sc',22000+i*350,22700+i*350,.3,1,'back')});R2.lab.t('op',22000,22400,0,1,'lin');poof(c,120+CL[2]+14,222,23700,COL.z);R2.t[2].t('op',23600,24400,1,0,'lin');
+ const pl=c.G(g,545,224);mk('rect',{x:-70,y:-17,width:140,height:32,rx:16,fill:'#7c3aed'},pl.el);mk('text',{y:5,'text-anchor':'middle','font-size':14,'font-weight':800,fill:'#fff','font-family':FF},pl.el,'SPLTV → SPLDV');pl.show(27000,700,'elastic');
+}),
+new Scene('Menyelesaikan SPLDV dan mencari dua variabel',22000,[
+ [500,'F','Tinggal dua persamaan dengan dua variabel: (4) dan (5). Itulah SPLDV.'],
+ [5000,'F','Jumlahkan (4) dan (5). Suku x saling menghapus: −x + x = 0.'],
+ [11000,'H','Jadi 4y = 240.000. Bagi 4, maka y = 60.000. Harga sekilo tuna Rp60.000!'],
+ [16000,'H','Dari (4): −x + y = 20.000, jadi x = y − 20.000 = 40.000. Cakalang Rp40.000!']],
+ (sc,g)=>{const c=ctx(sc,g);board(c,g);person(c,sc,'F',60,282).show(300,500);person(c,sc,'H',582,282).show(300,500);
+ const CL=[0,80,160,240],t=tray(c,sc,g,505,40,500,null);
+ const e4=eqRow(c,g,100,44,'(4)',['−x','+ y','','= 20000'],19,CL),e5=eqRow(c,g,100,72,'(5)',['x','+ 3y','','= 220000'],19,CL);e4.g.show(500,500);e5.g.show(900,500);
+ const a=eqRow(c,g,100,112,'',['−x','+ y','','= 20000'],19,CL),b=eqRow(c,g,100,140,'',['x','+ 3y','','= 220000'],19,CL),pls=c.T(g,40,144,'+',COL.c,26);
+ a.g.t('y',5000,6000,-68,0,'out').t('op',5000,5300,0,1,'lin');b.g.t('y',5300,6300,-68,0,'out').t('op',5300,5600,0,1,'lin');pls.t('op',6400,6800,0,1,'lin').t('sc',6400,7000,2,1,'bounce');
+ const ln=c.A('rect',{x:42,y:150,width:0,height:3,rx:1.5,fill:'#fff'},g),lo=new Obj(ln);sc.objs.push(lo);lo.fxs(7200,8000,tt=>ln.setAttribute('width',420*cl((tt-7200)/800,0,1)));
+ const rr=eqRow(c,g,100,176,'',['0x','4y','','= 240000'],19,CL);rr.t.forEach((q,i)=>q.t('op',8300+i*300,8700+i*300,0,1,'lin'));poof(c,100+14,169,9300,COL.x);rr.t[0].t('op',9200,9900,1,0,'lin');
+ const ans=c.T(g,100,208,'4y = 240000',COL.y,22);ans.t('op',10800,11200,0,1,'lin').step([[0,'4y = 240000'],[11800,'y = 240000 ÷ 4'],[13000,'y = 60000']]).t('sc',13000,13500,1.3,1,'bounce');
+ const tk1=token(c,g,0,230,208,t.cx+8,t.cy(1),14000,15400,'y',COL.y);t.v[1].step([[0,'?'],[15500,'60000']]);
+ const f4=c.T(g,100,238,'x = y − 20000',COL.x,20);f4.t('op',16000,16400,0,1,'lin').step([[0,'x = y − 20000'],[18200,'x = 60000 − 20000'],[19400,'x = 40000']]).t('sc',19400,19900,1.3,1,'bounce');
+ const tk2=token(c,g,1,230,238,t.cx+8,t.cy(0),20000,21200,'x',COL.x);t.v[0].step([[0,'?'],[21300,'40000']]);
+ const hl=c.A('rect',{x:36,y:26,width:456,height:26,rx:8,fill:'none',stroke:'#fde047','stroke-width':2.5},g),ho=new Obj(hl);sc.objs.push(ho);ho.t('op',16000,16400,0,1,'lin').t('op',19800,20200,1,0,'lin')}),
+new Scene('Substitusi: mencari variabel ketiga',20000,[
+ [500,'F','x = 40.000 dan y = 60.000 sudah ketemu. Tinggal mencari z!'],
+ [4500,'F','Substitusikan keduanya ke salah satu persamaan awal, misalnya (1).'],
+ [8500,'H','40.000 + 2 × 60.000 + z = 190.000, sehingga 160.000 + z = 190.000.'],
+ [13000,'H','Jadi z = 190.000 − 160.000 = 30.000. Harga sekilo tongkol Rp30.000!'],
+ [17000,'F','Ketiga variabel sudah ketemu. Tapi kita belum selesai: periksa dulu!']],
+ (sc,g)=>{const c=ctx(sc,g);board(c,g);person(c,sc,'F',60,282).show(300,500);person(c,sc,'H',582,282).show(300,500);
+ const t=tray(c,sc,g,505,40,300,['40000','60000','?']);
+ c.T(g,40,48,'Persamaan (1):',COL.c,17).show(500,400);
+ const eq=c.T(g,40,110,'x + 2y + z = 190000',COL.w,24);eq.show(900,500).step([[0,'x + 2y + z = 190000'],[6500,'40000 + 2(60000) + z = 190000'],[9500,'40000 + 120000 + z = 190000'],[11200,'160000 + z = 190000'],[13500,'z = 190000 − 160000'],[15200,'z = 30000']]);
+ [6500,9500,11200,13500,15200].forEach(q=>eq.t('sc',q,q+500,1.12,1,'bounce'));
+ const an=c.T(g,40,150,'',COL.c,16);an.step([[0,''],[6500,'↑ x dan y disubstitusikan'],[9500,'↑ 2 × 60000 = 120000'],[11200,'↑ 40000 + 120000 = 160000'],[13500,'↑ pindahkan 160000 ke ruas kanan'],[15200,'↑ z ketemu!']]);
+ token(c,g,0,505+28,40+22,150,110,4500,6400,'x',COL.x);token(c,g,1,505+28,40+74,250,110,4700,6400,'y',COL.y);
+ token(c,g,2,330,95,t.cx+8,t.cy(2),15800,17000,'z',COL.z);t.v[2].step([[0,'?'],[17100,'30000']]);
+ const sp=c.G(g,330,210);mk('rect',{x:-130,y:-20,width:260,height:36,rx:18,fill:'#7c3aed'},sp.el);mk('text',{y:6,'text-anchor':'middle','font-size':15,'font-weight':800,fill:'#fff','font-family':FF},sp.el,'z = Rp30.000 (tongkol)');sp.show(15600,700,'elastic');poof(c,330,190,16000,COL.z)}),
+new Scene('Memeriksa hasil pada ketiga persamaan',24000,[
+ [500,'F','Terakhir, periksa hasilnya pada ketiga persamaan awal, bukan hanya satu.'],
+ [4500,'H','Persamaan (1): 40.000 + 120.000 + 30.000 = 190.000. Benar!'],
+ [9500,'H','Persamaan (2): 80.000 + 60.000 + 30.000 = 170.000. Benar!'],
+ [14500,'H','Persamaan (3): 40.000 + 60.000 + 60.000 = 160.000. Benar!'],
+ [19500,'F','Ketiganya benar! Tripel (40.000; 60.000; 30.000) adalah penyelesaian: titik temu tiga persamaan.']],
+ (sc,g)=>{const c=ctx(sc,g);board(c,g);person(c,sc,'F',60,282).show(300,500);person(c,sc,'H',582,282).show(300,500);
+ const L=[['(1) 40000 + 2(60000) + 30000 = 190000',4500],['(2) 2(40000) + 60000 + 30000 = 170000',9500],['(3) 40000 + 60000 + 2(30000) = 160000',14500]];
+ L.forEach((l,i)=>{const y=62+i*62,tt=c.T(g,36,y,l[0],COL.w,17);tt.typed(l[1],l[1]+2600,l[0]);tt.t('op',l[1],l[1]+100,0,1,'lin');const ck=c.G(g,446,y-8);mk('path',{d:'M-13 0L-4 10L14-13',stroke:'#4ade80','stroke-width':6,fill:'none','stroke-linecap':'round','stroke-linejoin':'round'},ck.el);ck.t('op',l[1]+3000,l[1]+3300,0,1,'lin').t('sc',l[1]+3000,l[1]+3800,.1,1.1,'elastic');poof(c,446,y-8,l[1]+3000,'#4ade80')});
+ const S=36,ex=[-.866*S,.5*S],ey=[.866*S,.5*S],ez=[0,-S],P=(x,y,z)=>[ex[0]*x+ey[0]*y+ez[0]*z,ex[1]*x+ey[1]*y+ez[1]*z],pj=a=>a.map(q=>q.map(v=>v.toFixed(1)).join(',')).join(' ');
+ const sh=[[[P(1,1,0),P(1,-1,0),P(-1,-1,0),P(-1,1,0)],'#7dd3fc',-60,-40,0,4500],[[P(1,0,.6),P(1,0,-.3),P(-1,0,-.3),P(-1,0,.6)],'#fde68a',60,-50,0,9500],[[P(0,1,.6),P(0,1,-.3),P(0,-1,-.3),P(0,-1,.6)],'#6ee7b7',0,50,0,14500]],pg=c.G(g,545,150);
+ sh.forEach(s=>{const q=c.G(pg.el,0,0);mk('polygon',{points:pj(s[0]),fill:s[1],'fill-opacity':.38,stroke:s[1],'stroke-width':1.8,'stroke-linejoin':'round'},q.el);q.t('x',s[5]+200,s[5]+1600,s[2],0,'out').t('y',s[5]+200,s[5]+1600,s[3],0,'out').t('op',s[5],s[5]+300,0,1,'lin');q.t('op',0,1,0,0,'lin')});
+ const dt=c.G(g,545,150);mk('circle',{r:5,fill:'#fff',stroke:'#fde047','stroke-width':2.5},dt.el);dt.show(16500,500,'elastic').fxs(16500,24000,t=>{dt.el.setAttribute('opacity',.7+.3*Math.sin(t/160))});
+ const lb=c.T(g,545,205,'TITIK MIZAN',COL.c,15,'middle');lb.show(17000,500,'back');
+ const rs=c.G(g,300,232);mk('rect',{x:-200,y:-22,width:400,height:36,rx:18,fill:'#7c3aed'},rs.el);mk('text',{y:6,'text-anchor':'middle','font-size':14.5,'font-weight':800,fill:'#fff','font-family':FF},rs.el,'(x, y, z) = (40.000 ; 60.000 ; 30.000)');rs.show(19500,800,'elastic')}),
+new Scene('Rangkuman langkah metode campuran',22000,[
+ [500,'F','Rangkuman metode campuran. Langkah 1: pilih variabel yang paling mudah dieliminasi.'],
+ [4500,'F','Langkah 2: eliminasi dari dua pasang persamaan sehingga menjadi SPLDV.'],
+ [8500,'F','Langkah 3: selesaikan SPLDV. Langkah 4: substitusi untuk variabel ketiga.'],
+ [13000,'F','Langkah 5: periksa pada ketiga persamaan, lalu tulis kesimpulan sesuai konteks soal.'],
+ [17500,'H','Pelan-pelan, teliti, dan jujur, seperti menimbang dengan neraca yang benar. Sampai jumpa!']],
+ (sc,g)=>{const c=ctx(sc,g);board(c,g);person(c,sc,'F',60,282).show(300,500);person(c,sc,'H',582,282).show(300,500);
+ const st=['Pilih variabel yang paling mudah dieliminasi','Eliminasi dari dua pasang persamaan → SPLDV','Selesaikan SPLDV: dapat dua variabel','Substitusi ke persamaan awal → variabel ketiga','Periksa pada ketiga persamaan, lalu simpulkan'],tm=[500,4500,8500,10500,13000];
+ st.forEach((s,i)=>{const r=c.G(g,34,50+i*38);mk('circle',{cx:14,cy:-6,r:14,fill:['#fde047','#7dd3fc','#6ee7b7','#fda4af','#c4b5fd'][i]},r.el);mk('text',{x:14,y:0,'text-anchor':'middle','font-size':16,'font-weight':800,fill:'#14532d','font-family':FF},r.el,String(i+1));mk('text',{x:38,y:0,'font-size':15.5,'font-weight':700,fill:'#fff','font-family':FF},r.el,s);r.t('x',tm[i],tm[i]+900,-60,0,'out').t('op',tm[i],tm[i]+300,0,1,'lin')});
+ [['x = Rp40.000','cakalang',COL.x],['y = Rp60.000','tuna',COL.y],['z = Rp30.000','tongkol',COL.z]].forEach((a,i)=>{const r=c.G(g,470,62+i*58);mk('rect',{x:-8,y:-30,width:158,height:46,rx:12,fill:'#052e16',stroke:a[2],'stroke-width':2},r.el);const f=c.G(r.el,16,-8);fish(f.el,a[2],1.1);mk('text',{x:36,y:-12,'font-size':14,'font-weight':800,fill:a[2],'font-family':FF},r.el,a[0]);mk('text',{x:36,y:6,'font-size':11.5,'font-weight':700,fill:'#fff','font-family':FF},r.el,a[1]);r.show(13500+i*600,600,'elastic');r.fxs(13500+i*600,22000,t=>{r.el.setAttribute('transform','translate('+(470)+' '+(62+i*58+Math.sin(t/300+i)*2.4)+') scale(1)')})});
+ const fin=c.G(g,320,232);mk('rect',{x:-190,y:-20,width:380,height:34,rx:17,fill:'#7c3aed'},fin.el);mk('text',{y:6,'text-anchor':'middle','font-size':15,'font-weight':800,fill:'#fff','font-family':FF},fin.el,'Pelan-pelan • Teliti • Jujur');fin.show(17500,800,'elastic');poof(c,320,216,18000,'#fde047')})
+];
+/* ================= PEMUTAR ================= */
+let st=null;
+function total(){return SC.reduce((s,a)=>s+a.dur,0)}
+function startOf(i){let s=0;for(let k=0;k<i;k++)s+=SC[k].dur;return s}
+function build(svg){SC.forEach(s=>{s.objs=[];s.g=mk('g',{},svg);s.g.style.display='none';s.build(s,s.g);s.objs.forEach(o=>{for(const p in o.tr)o.tr[p].sort((a,b)=>a.t0-b.t0)})})}
+function render(T){let i=0,acc=0;for(;i<SC.length-1;i++){if(T<acc+SC[i].dur)break;acc+=SC[i].dur}const s=SC[i],t=cl(T-acc,0,s.dur);
+ if(st.cur!=i){SC.forEach((q,k)=>q.g.style.display=k==i?'':'none');st.cur=i;st.ci=-1;if(st.ui){st.ui.title.textContent='Adegan '+(i+1)+'/'+SC.length+' • '+s.title;[...st.ui.chips.children].forEach((b,k)=>b.className='btn '+(k==i?'':'alt'))}}
+ s.objs.forEach(o=>draw(o,t));let ci=-1;for(let k=0;k<s.cues.length;k++)if(t>=s.cues[k][0])ci=k;
+ if(ci!=st.ci&&st.ui){st.ci=ci;const q=s.cues[Math.max(0,ci)];st.ui.who.textContent=FNAME[q[1]]+':';st.ui.tx.textContent=q[2]}
+ if(st.ui)st.ui.seek.value=T}
+function loop(now){if(!st)return;if(st.play){const dt=Math.min(100,now-st.last);st.T=Math.min(total(),st.T+dt*st.sp);if(st.T>=total()){st.play=false;st.ui.pp.textContent='▶ Putar'}}st.last=now;render(st.T);st.raf=requestAnimationFrame(loop)}
+function stop(){if(st){cancelAnimationFrame(st.raf);st=null}}
+function init(b,k0){stop();b.innerHTML=`<div class="sm" id="mvT" style="font-weight:700;margin-bottom:6px"></div><div id="mvC" class="row" style="gap:6px;margin-bottom:6px"></div><svg id="mvSvg" viewBox="0 0 640 330" style="width:100%;height:auto;border-radius:14px;box-shadow:0 4px 18px #0003;display:block;background:#dbeafe"></svg><div class="box kbc" style="margin-top:8px"><b id="mvW"></b> <span id="mvX"></span></div><input type="range" id="mvS" min="0" max="${total()}" step="20" value="0" style="margin:6px 0" aria-label="Geser animasi"><div class="row"><button class="btn alt" id="mvPv">⏮</button><button class="btn" id="mvPP">⏸ Jeda</button><button class="btn alt" id="mvNx">⏭</button><button class="btn alt" id="mvRp">↺ Ulang</button><button class="btn alt" id="mvSp">Kecepatan 1×</button><button class="btn alt" id="mvRd">🔊 Bacakan</button></div><div class="sm" style="margin-top:6px">Animasi materi SPLTV metode campuran: ikuti ceritanya, geser garis waktu, atau ulangi adegan yang belum paham.</div>`;
+ const svg=b.querySelector('#mvSvg');build(svg);const ui={title:b.querySelector('#mvT'),chips:b.querySelector('#mvC'),who:b.querySelector('#mvW'),tx:b.querySelector('#mvX'),seek:b.querySelector('#mvS'),pp:b.querySelector('#mvPP')};
+ SC.forEach((s,i)=>{const bt=document.createElement('button');bt.className='btn alt';bt.textContent=String(i+1);bt.title=s.title;bt.onclick=()=>{st.T=startOf(i);st.play=true;ui.pp.textContent='⏸ Jeda'};ui.chips.appendChild(bt)});
+ st={T:startOf(cl(k0|0,0,SC.length-1)),play:true,sp:1,cur:-1,ci:-1,last:performance.now(),ui:ui,raf:0};const SPD=[1,.75,.5,1.5];
+ ui.pp.onclick=()=>{if(st.T>=total()-1)st.T=0;st.play=!st.play;ui.pp.textContent=st.play?'⏸ Jeda':'▶ Putar'};
+ b.querySelector('#mvPv').onclick=()=>{const c=st.cur,loc=st.T-startOf(c);st.T=startOf(loc>2500?c:Math.max(0,c-1))};b.querySelector('#mvNx').onclick=()=>{st.T=Math.min(total()-1,startOf(Math.min(SC.length-1,st.cur+1)))};
+ b.querySelector('#mvRp').onclick=()=>{st.T=startOf(st.cur);st.play=true;ui.pp.textContent='⏸ Jeda'};
+ const spb=b.querySelector('#mvSp');spb.onclick=()=>{const i=(SPD.indexOf(st.sp)+1)%SPD.length;st.sp=SPD[i];spb.textContent='Kecepatan '+st.sp+'×'};
+ ui.seek.oninput=()=>{st.T=+ui.seek.value;render(st.T)};
+ b.querySelector('#mvRd').onclick=()=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(ui.tx.textContent);u.lang='id-ID';u.rate=.95;speechSynthesis.speak(u)}catch(e){}};
+ render(st.T);st.raf=requestAnimationFrame(loop)}
+return{init:init,stop:stop,seek:T=>{if(st){st.play=false;st.T=T;render(T)}},scenes:SC,total:total,startOf:startOf,state:()=>st}})();
+window.movStop=()=>MV.stop();window.movInit=(b,k)=>MV.init(b,k);
+
 const qf=v=>String(Math.round(v*100)/100).replace('.',','),qt=(c,v,fr)=>c==0?'':(c<0?'-':(fr?'':'+'))+(Math.abs(c)==1?'':qf(Math.abs(c)))+v,qeq=(a,b,c,d)=>{let s=qt(a,'x',1);s+=qt(b,'y',!s);s+=qt(c,'z',!s);return (s||'0')+'='+qf(d)},qs=(c,v,fr)=>(fr?(c<0?'-':''):(c<0?'-':'+'))+Math.abs(c)+'('+v+')';
-function simstart(){show('sim');$('st').innerHTML=['🪜 Langkah Campuran','⚙️ Mesin SPLTV','✅ Periksa Jawaban'].map((n,i)=>`<button class="btn alt" onclick="simTab(${i})">${n}</button>`).join('');simTab(0)}
-function simTab(i){let b=$('sb');
-if(i==0){const SP=['<b>Soal:</b> (1) $x+y+z=6$, (2) $2x+y-z=1$, (3) $x-y+2z=5$. Pilih variabel yang mudah dihilangkan: $z$ (koefisiennya $+1$, $-1$, dan $+2$).','<b>Eliminasi $z$, pasangan (1) dan (2):</b> koefisien $z$ berlawanan tanda, jadi dijumlahkan: $3x+2y=7$ (4).','<b>Eliminasi $z$, pasangan (1) dan (3):</b> kalikan (1) dengan 2, lalu kurangkan dengan (3): $x+3y=7$ (5).','<b>Selesaikan SPLDV (4) dan (5):</b> kalikan (5) dengan 3 lalu kurangkan dengan (4): $7y=14$, maka $y=2$. Substitusi ke (5): $x+6=7$, maka $x=1$.','<b>Substitusi ke (1):</b> $1+2+z=6$, maka $z=3$.','<b>Periksa:</b> (1) $1+2+3=6$ ✔, (2) $2(1)+2-3=1$ ✔, (3) $1-2+2(3)=5$ ✔. Penyelesaian: $(x,y,z)=(1,2,3)$ 🎉'];let k=0;
+function simstart(k){show('sim');$('st').innerHTML=['🎬 Animasi Materi','🪜 Langkah Campuran','⚙️ Mesin SPLTV','✅ Periksa Jawaban'].map((n,i)=>`<button class="btn alt" onclick="simTab(${i})">${n}</button>`).join('');simTab(0,k)}
+function simTab(i,k){if(window.movStop)movStop();let b=$('sb');if(i==0){movInit(b,k);return}
+if(i==1){const SP=['<b>Soal:</b> (1) $x+y+z=6$, (2) $2x+y-z=1$, (3) $x-y+2z=5$. Pilih variabel yang mudah dihilangkan: $z$ (koefisiennya $+1$, $-1$, dan $+2$).','<b>Eliminasi $z$, pasangan (1) dan (2):</b> koefisien $z$ berlawanan tanda, jadi dijumlahkan: $3x+2y=7$ (4).','<b>Eliminasi $z$, pasangan (1) dan (3):</b> kalikan (1) dengan 2, lalu kurangkan dengan (3): $x+3y=7$ (5).','<b>Selesaikan SPLDV (4) dan (5):</b> kalikan (5) dengan 3 lalu kurangkan dengan (4): $7y=14$, maka $y=2$. Substitusi ke (5): $x+6=7$, maka $x=1$.','<b>Substitusi ke (1):</b> $1+2+z=6$, maka $z=3$.','<b>Periksa:</b> (1) $1+2+3=6$ ✔, (2) $2(1)+2-3=1$ ✔, (3) $1-2+2(3)=5$ ✔. Penyelesaian: $(x,y,z)=(1,2,3)$ 🎉'];let k=0;
 b.innerHTML=`<div class="sm">Ketuk tombol untuk melihat langkah metode campuran satu per satu.</div><div id="stp"></div><div class="row"><button class="btn" id="stn">Langkah berikutnya ▶</button><button class="btn alt" id="str">↺ Ulangi</button></div>`;
 const dr=()=>{$('stp').innerHTML=SP.slice(0,k+1).map((t,j)=>`<div class="box ${j==k?'kbc':''}"><b>${j+1}.</b> ${t}</div>`).join('');$('stn').disabled=k>=SP.length-1;mj($('stp'))};
 $('stn').onclick=()=>{if(k<SP.length-1){k++;dr();if(k==SP.length-1){confetti();say('Tripel penyelesaian ditemukan! Camar terharu, kamu hebat 🥹🎉')}}};$('str').onclick=()=>{k=0;dr()};dr()}
-if(i==1){const IN=(id,v)=>`<input id="${id}" type="number" value="${v}" style="width:70px;display:inline-block;margin:2px">`,V=[[1,1,1,6],[2,1,-1,1],[1,-1,2,5]];
+if(i==2){const IN=(id,v)=>`<input id="${id}" type="number" value="${v}" style="width:70px;display:inline-block;margin:2px">`,V=[[1,1,1,6],[2,1,-1,1],[1,-1,2,5]];
 b.innerHTML=`<div class="sm">Ubah angkanya! Mesin menghilangkan $z$ lebih dulu, menyelesaikan SPLDV yang terbentuk, lalu memeriksa hasilnya pada ketiga persamaan.</div>`+[0,1,2].map(r=>`<div style="margin:6px 0"><b>Persamaan ${r+1}:</b> ${IN('a'+r,V[r][0])} x + ${IN('b'+r,V[r][1])} y + ${IN('c'+r,V[r][2])} z = ${IN('d'+r,V[r][3])}</div>`).join('')+`<div class="box" id="mo"></div>`;
 const u=()=>{const E=[0,1,2].map(r=>['a','b','c','d'].map(k=>+$(k+r).value||0)),o=$('mo'),p=E.findIndex(e=>e[2]!=0),D=E[0][0]*(E[1][1]*E[2][2]-E[1][2]*E[2][1])-E[0][1]*(E[1][0]*E[2][2]-E[1][2]*E[2][0])+E[0][2]*(E[1][0]*E[2][1]-E[1][1]*E[2][0]);
 if(p<0||Math.abs(D)<1e-9){o.innerHTML='⚠️ SPLTV ini tidak memiliki penyelesaian tunggal (tidak ada penyelesaian atau banyak sekali penyelesaian).';return}
 const P=E[p],js=[0,1,2].filter(j=>j!=p),N=js.map(j=>{let Q=E[j];return[P[2]*Q[0]-Q[2]*P[0],P[2]*Q[1]-Q[2]*P[1],P[2]*Q[3]-Q[2]*P[3]]}),d2=N[0][0]*N[1][1]-N[1][0]*N[0][1],x=(N[0][2]*N[1][1]-N[1][2]*N[0][1])/d2,y=(N[0][0]*N[1][2]-N[1][0]*N[0][2])/d2,z=(P[3]-P[0]*x-P[1]*y)/P[2],e=E.map(q=>q[0]*x+q[1]*y+q[2]*z),ok=e.map((v,j)=>Math.abs(v-E[j][3])<1e-6);
 o.innerHTML='<b>Eliminasi $z$</b> memakai persamaan '+(p+1)+' sebagai pembanding:<br>'+js.map((j,n)=>'• '+qf(P[2])+' × persamaan '+(j+1)+' − ('+qf(E[j][2])+') × persamaan '+(p+1)+' → $'+qeq(N[n][0],N[n][1],0,N[n][2])+'$').join('<br>')+'<br><b>Selesaikan SPLDV:</b> $x='+qf(x)+'$ dan $y='+qf(y)+'$<br><b>Substitusi ke persamaan '+(p+1)+':</b> $z='+qf(z)+'$<br><b>Pemeriksaan:</b> '+e.map((v,j)=>'persamaan '+(j+1)+' → $'+qf(v)+'$ '+(ok[j]?'✔':'✘')).join(' • ')+'<br><b>Penyelesaian:</b> $(x,y,z)=('+qf(x)+','+qf(y)+','+qf(z)+')$';mj(o)};
 [0,1,2].forEach(r=>['a','b','c','d'].forEach(k=>$(k+r).oninput=u));u()}
-if(i==2){const P=[[[1,1,1,6],[2,1,-1,1],[1,-1,2,5]],[[1,2,1,23000],[2,1,3,39000],[1,1,2,24000]],[[1,1,1,90],[1,1,-2,0],[0,1,-1,10]]],nm=['contoh','kedai','investasi'];
+if(i==3){const P=[[[1,1,1,6],[2,1,-1,1],[1,-1,2,5]],[[1,2,1,23000],[2,1,3,39000],[1,1,2,24000]],[[1,1,1,90],[1,1,-2,0],[0,1,-1,10]]],nm=['contoh','kedai','investasi'];
 b.innerHTML=`<div class="sm">Pilih SPLTV, tebak nilai $x$, $y$, dan $z$, lalu periksa pada ketiga persamaan.</div><select id="ps" style="width:100%;padding:10px;border:2px solid #a5f3fc;border-radius:10px;font:1rem Poppins;margin:6px 0">${P.map((p,k)=>`<option value="${k}">SPLTV ${k+1} (${nm[k]}): ${p.map(r=>qeq(r[0],r[1],r[2],r[3])).join(' ; ')}</option>`).join('')}</select><div class="cols"><div>Nilai $x$<input id="ix" type="number" placeholder="x"></div><div>Nilai $y$<input id="iy" type="number" placeholder="y"></div></div><div>Nilai $z$<input id="iz" type="number" placeholder="z"></div><button class="btn" id="pk">Periksa</button><div class="box" id="po">Isi nilai $x$, $y$, dan $z$, lalu tekan Periksa.</div>${ay(1)}`;
 $('pk').onclick=()=>{let p=P[+$('ps').value],xs=$('ix').value.trim(),ys=$('iy').value.trim(),zs=$('iz').value.trim();if(xs===''||ys===''||zs===''){$('po').textContent='Isi nilai x, y, dan z terlebih dahulu.';return}let x=+xs,y=+ys,z=+zs,all=true,h='';
 p.forEach((r,j)=>{let v=r[0]*x+r[1]*y+r[2]*z,k=v==r[3],t=qs(r[0],x,1)+qs(r[1],y)+qs(r[2],z);if(!k)all=false;h+='Persamaan '+(j+1)+': $'+t+'='+qf(v)+'$ '+(k?'✔ benar':'✘ harus '+qf(r[3]))+'<br>'});
