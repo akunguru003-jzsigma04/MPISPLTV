@@ -94,6 +94,11 @@ body:has(#cover.on){background:radial-gradient(circle at 20% 10%,#2563eb 0,#1e40
 .devph{display:block;margin:0 auto 10px;max-width:100%;max-height:52vh;width:auto;height:auto;border-radius:16px;border:3px solid #facc15;box-shadow:0 6px 18px #0004}
 .mf{font-family:'Times New Roman',serif;font-style:italic;white-space:nowrap}.mf sub,.mf sup{font-size:.75em}
 .ni{width:170px;font-size:1.15rem;text-align:center;font-weight:700;display:inline-block}.ni.ok{border-color:#16a34a;background:#dcfce7}.ni.no{border-color:#dc2626;background:#fee2e2}.numw{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0;font-weight:700}
+#wkPrint{display:none}.wkv{overflow-x:auto}.wki{display:flex;flex-wrap:wrap;gap:6px 22px;margin-bottom:6px;font-size:.88rem}.wki>div{margin-right:22px}
+.wkt{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:6px}.wkt th,.wkt td{border:1px solid #94a3b8;padding:5px 7px;text-align:left;vertical-align:top}.wkt th{background:#e0f2fe;color:#0c4a6e}
+.pi{display:inline-block;border-radius:12px;padding:1px 9px;font-size:.78rem;font-weight:700;border:1px solid;white-space:nowrap}.pi-i{background:#dcfce7;color:#166534;border-color:#16a34a}.pi-b{background:#dbeafe;color:#1e40af;border-color:#2563eb}.pi-p{background:#ffedd5;color:#9a3412;border-color:#ea580c}.pi-x{background:#f1f5f9;color:#475569;border-color:#94a3b8}
+.wks{display:flex;justify-content:space-between;gap:20px;margin-top:22px;font-size:.88rem;text-align:center}.wks>div{flex:1}
+@media print{body.wkp>*:not(#wkPrint){display:none!important}body.wkp #wkPrint{display:block!important;padding:10mm;color:#000;background:#fff;font-family:Poppins,Arial,sans-serif}body.wkp{background:#fff!important}body.wkp #wkPrint .wkt th{background:#e5e7eb!important}}
 </style></head><body>
 </div>
 <div id="mod"><div class="card" id="modc"></div></div>
@@ -211,10 +216,18 @@ body:has(#cover.on){background:radial-gradient(circle at 20% 10%,#2563eb 0,#1e40
 <div class="dtl"><label>Kelas <select id="fCls" onchange="tchRender()"></select></label><input id="fQ" placeholder="🔎 Cari nama siswa…" oninput="tchRender()"><label title="Kriteria Ketercapaian Tujuan Pembelajaran (ditentukan guru)">KKTP <input id="fKkm" type="number" min="1" max="100" onchange="tchKkm()"></label><span class="sm" id="kktpInfo"></span></div>
 <div class="tw"><table id="dtb"></table></div>
 <div class="sm" style="margin-top:8px">Nilai Akhir = poin Berlatih (maks. 100). Rata-rata dan ketercapaian KKTP dihitung dari siswa yang sudah menyelesaikan Berlatih. Data tersimpan otomatis di peramban perangkat ini; untuk menggabungkan data dari perangkat siswa lain, gunakan <b>Impor Data</b> (file .json dari tombol “Kirim Data ke Guru” pada laporan siswa).<br>☁️ Bila <code>GAS_URL</code> sudah diisi, hasil Bermain &amp; Berlatih setiap siswa otomatis terkirim ke Google Sheets (sheet “Hasil”). Tombol <b>Tarik dari Sheets</b> menggabungkan data dari semua perangkat ke dashboard ini.</div></div>
+<div class="card noprint" id="wkCard"><h3>📨 Laporan ke Wali Kelas</h3>
+<div class="sm">Laporan berisi <b>predikat</b> tiap siswa (Istimewa / Baik / Perlu Bimbingan), bukan angka nilai. Predikat memakai Nilai Akhir (Berlatih) dan KKTP materi masing-masing. Hanya siswa yang sudah menyelesaikan Berlatih yang mendapat predikat.</div>
+<div class="dtl" style="margin-top:8px"><label>Kelas <select id="wkK" onchange="wkRender(true)"></select></label><label>Wali Kelas <input id="wkW" placeholder="Nama wali kelas" oninput="wkNama()"></label><label>Guru Mapel <input id="wkG" placeholder="Nama guru mata pelajaran" oninput="wkNama()"></label></div>
+<div class="row" id="wkMs" style="margin-bottom:8px"></div>
+<div class="box wkv" id="wkOut"></div>
+<div class="row"><button class="btn" onclick="wkPrint()">🖨️ Cetak / Simpan PDF</button><button class="btn alt" onclick="wkCSV()">⬇ Unduh CSV</button><button class="btn alt" onclick="wkCopy()">📋 Salin teks WhatsApp</button><button class="btn alt" onclick="wkExport()">⬇ Berkas laporan materi ini</button><button class="btn alt" onclick="$('wkImp').click()">📥 Impor laporan materi lain</button><input type="file" id="wkImp" accept=".json,application/json" multiple style="display:none" onchange="wkImport(this)"></div>
+<div class="sm" id="wkNote" style="margin-top:6px"></div></div>
 <div class="card" id="itCard"><h3>🔍 Analisis Butir Soal</h3>
 <div class="sm">Persentase siswa yang menjawab benar pada tiap soal, dihitung dari seluruh percobaan yang terkirim ke Google Sheets (mengikuti filter kelas di atas). Soal dengan % benar rendah layak dibahas ulang atau dijadikan bahan remedial. Butuh <b>Code.gs terbaru</b> dan tombol <b>☁️ Tarik dari Sheets</b>.</div>
 <div class="box" id="itS" style="margin:8px 0"></div><div class="tw"><table id="itb"></table></div></div>
 </section>
+<div id="wkPrint"></div>
 <div id="tb"><button onclick="S.mute=!S.mute;this.textContent=S.mute?'🔇':'🔊'">🔊</button><button onclick="document.body.classList.toggle('dk')">🌙</button><button onclick="fs(1)">A+</button><button onclick="fs(-1)">A-</button></div>
 <div id="gd"><div id="gb2"></div><span>🐦</span></div>
 <section class="scr" id="sim"><div class="card"><h2>🔬 Laboratorium</h2><div class="row" id="st"></div><div id="sb"></div></div><div class="row"><button class="btn alt" onclick="show('menu')">☰ Menu</button></div></section>
@@ -703,6 +716,64 @@ let h='<tr><th>Menu</th><th>No</th><th>Soal</th><th>Dijawab</th><th>% Benar</th>
 h+=`<tr><td>${m}</td><td class="num">${i+1}</td><td class="sm">${esc(sn)}${m=='Berlatih'?'<div class="sm">'+LN[LV(i)]+'</div>':''}</td><td class="num">${n}</td><td>${p==null?'–':`<div class="pg">${p}%<div class="bar"><i style="width:${p}%"></i></div></div>`}</td><td class="sm">${p==null||n<3?'':p<50?'⚠️ Perlu dibahas':p>=85?'✅ Mudah':''}</td></tr>`})});
 T.innerHTML=h;st.sort((a,b)=>a.p-b.p);const lo=st.filter(x=>x.p<50).slice(0,4);
 $('itS').innerHTML=lo.length?'⚠️ <b>Paling perlu dibahas:</b> '+lo.map(x=>x.m+' No '+x.no+' ('+x.p+'%, '+x.n+' jawaban)').join(' • '):(st.length?'✅ Tidak ada soal dengan % benar di bawah 50%.':'Data belum cukup (minimal 3 jawaban per soal).')}
+/* ===== LAPORAN KE WALI KELAS: yang dilaporkan adalah PREDIKAT (bukan angka nilai) ===== */
+const WK={n:3,label:'Materi 3',topik:'SPLTV Metode Campuran'},WKP=['Istimewa','Baik','Perlu Bimbingan'],WKSEL={};
+const wkGet=m=>{try{return JSON.parse(localStorage.getItem('mpiw_'+m)||'null')}catch(e){return null}};
+const wkSet=(m,v)=>{try{localStorage.setItem('mpiw_'+m,JSON.stringify(v))}catch(e){}};
+const wkNm=()=>{try{return JSON.parse(localStorage.getItem('mpiw_nama')||'{}')||{}}catch(e){return{}}};
+function wkNama(){try{localStorage.setItem('mpiw_nama',JSON.stringify({g:$('wkG').value.trim().slice(0,60),w:$('wkW').value.trim().slice(0,60)}))}catch(e){}wkRender(true)}
+const wkBatas=k=>({k:k,i:Math.min(100,k+Math.ceil(((100-k)*3)/5))});
+const wkKrit=k=>{const b=wkBatas(k);return 'Perlu Bimbingan 0–'+(b.k-1)+' • '+(b.i>b.k?'Baik '+b.k+'–'+(b.i-1)+' • ':'')+'Istimewa '+b.i+'–100'};
+/* predikat materi ini (Nilai Akhir = poin Berlatih) untuk semua siswa di perangkat ini; disimpan agar materi lain dapat menggabungkan */
+function wkOwn(){const db=dbGet(),rows={};Object.keys(db).forEach(k=>{const r=db[k];if(r&&r.n)rows[skey(r.n,r.k)]={n:r.n,k:r.k,p:r.rp==100?predikat(r.rs):null}});const o={m:WK.n,label:WK.label,topik:WK.topik,ts:Date.now(),kktp:JW.kktp,rows:rows};wkSet(WK.n,o);return o}
+function wkMats(){const a=[wkOwn()];[1,2,3].forEach(m=>{if(m!=WK.n){const s=wkGet(m);if(s&&s.rows&&typeof s.rows=='object')a.push(s)}});a.sort((x,y)=>x.m-y.m);return a}
+const wkTgl=()=>new Date().toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+/* susun data: siswa x materi terpilih, difilter kelas */
+const wkKey=(n,k)=>String(n).toLowerCase().replace(/\s+/g,' ').trim()+'|'+String(k).toLowerCase().replace(/[^a-z0-9]/g,'');
+function wkBuild(){const all=wkMats(),mats=all.filter(s=>WKSEL[s.m]!==false),kel=$('wkK')?$('wkK').value:'',kn=String(kel).toLowerCase().replace(/[^a-z0-9]/g,''),um={};
+ mats.forEach(s=>Object.keys(s.rows).forEach(k=>{const r=s.rows[k];if(!r||!r.n)return;if(kn&&String(r.k).toLowerCase().replace(/[^a-z0-9]/g,'')!=kn)return;const kk=wkKey(r.n,r.k);um[kk]=um[kk]||{n:r.n,k:r.k,p:{}};um[kk].p[s.m]=r.p||null}));
+ const L=Object.keys(um).map(k=>um[k]).sort((a,b)=>String(a.k).localeCompare(String(b.k),'id',{numeric:true})||String(a.n).localeCompare(String(b.n),'id'));
+ L.forEach(o=>{const bad=[],none=[];mats.forEach(s=>{const v=o.p[s.m];if(v==='Perlu Bimbingan')bad.push('Materi '+s.m);else if(!v)none.push('Materi '+s.m)});
+  o.cat=bad.length?'Perlu pendampingan pada '+bad.join(', ')+'.':(none.length?'Belum menyelesaikan '+none.join(', ')+'.':'Pertahankan prestasinya.')});
+ return{all:all,mats:mats,L:L,kel:kel}}
+const wkCls=p=>p=='Istimewa'?'pi-i':p=='Baik'?'pi-b':p=='Perlu Bimbingan'?'pi-p':'pi-x';
+function wkRekap(D){return D.mats.map(s=>{const c={Istimewa:0,Baik:0,'Perlu Bimbingan':0,x:0};D.L.forEach(o=>{const v=o.p[s.m];if(WKP.includes(v))c[v]++;else c.x++});return{s:s,c:c}})}
+function wkHtml(){const D=wkBuild(),nm=wkNm(),h=[];
+ if(!D.mats.length)return '<div class="sm">Pilih minimal satu materi.</div>';
+ h.push('<div style="text-align:center;margin-bottom:8px"><div style="font-size:1.1rem;font-weight:800">LAPORAN PREDIKAT PEMBELAJARAN</div><div>Media Pembelajaran Interaktif Matematika • Kelas X (Fase E)</div><div>MAN 1 Boalemo</div></div>');
+ h.push('<div class="wki"><div>Kelas: <b>'+esc(D.kel||'Semua kelas')+'</b></div><div>Tanggal: <b>'+wkTgl()+'</b></div><div>Jumlah siswa: <b>'+D.L.length+'</b></div></div>');
+ h.push('<div class="wki" style="display:block">'+D.mats.map(s=>'<div><b>Materi '+s.m+'</b> – '+esc(s.topik||'')+' <span class="sm">(data '+fdt(s.ts)+')</span><br><span class="sm">Kriteria predikat: '+wkKrit(s.kktp)+'</span></div>').join('')+'</div>');
+ let t='<table class="wkt"><tr><th>No</th><th>Nama Siswa</th><th>Kelas</th>'+D.mats.map(s=>'<th>Predikat<br>Materi '+s.m+'</th>').join('')+'<th>Catatan</th></tr>';
+ if(!D.L.length)t+='<tr><td colspan="'+(D.mats.length+4)+'" style="text-align:center">Belum ada data siswa untuk kelas ini.</td></tr>';
+ D.L.forEach((o,i)=>{t+='<tr><td>'+(i+1)+'</td><td>'+esc(o.n)+'</td><td>'+esc(o.k)+'</td>'+D.mats.map(s=>{const v=o.p[s.m];return '<td style="text-align:center"><span class="pi '+wkCls(v)+'">'+(v||'Belum selesai')+'</span></td>'}).join('')+'<td class="sm">'+esc(o.cat)+'</td></tr>'});
+ h.push(t+'</table>');
+ let r='<div style="margin-top:10px"><b>Rekapitulasi</b></div><table class="wkt"><tr><th>Materi</th><th>Istimewa</th><th>Baik</th><th>Perlu Bimbingan</th><th>Belum selesai</th></tr>';
+ wkRekap(D).forEach(x=>{r+='<tr><td>Materi '+x.s.m+'</td><td style="text-align:center">'+x.c.Istimewa+'</td><td style="text-align:center">'+x.c.Baik+'</td><td style="text-align:center">'+x.c['Perlu Bimbingan']+'</td><td style="text-align:center">'+x.c.x+'</td></tr>'});
+ h.push(r+'</table>');
+ h.push('<div class="wks"><div>Mengetahui,<br>Wali Kelas<br><br><br><br><b>'+(esc(nm.w||'')||'(................................)')+'</b></div><div>'+esc('Boalemo, '+wkTgl())+'<br>Guru Mata Pelajaran Matematika<br><br><br><br><b>'+(esc(nm.g||'')||'(................................)')+'</b></div></div>');
+ return h.join('')}
+function wkRender(keep){if(!$('wkCard'))return;const nm=wkNm();if(!keep){$('wkG').value=nm.g||'';$('wkW').value=nm.w||''}
+ const all=wkMats(),cur=$('wkK').value,seen={};all.forEach(s=>Object.keys(s.rows).forEach(k=>{const r=s.rows[k];if(r&&r.k){const l=String(r.k).toLowerCase();if(!seen[l])seen[l]=r.k}}));
+ let o='<option value="">Semua kelas</option>';Object.keys(seen).sort((a,b)=>a.localeCompare(b,'id',{numeric:true})).forEach(l=>o+='<option value="'+esc(seen[l]).replace(/"/g,'&quot;')+'">'+esc(seen[l])+'</option>');
+ if(!keep||$('wkK').options.length!=Object.keys(seen).length+1){$('wkK').innerHTML=o;$('wkK').value=cur;if($('wkK').value!=cur)$('wkK').value=''}
+ $('wkMs').innerHTML=[1,2,3].map(m=>{const s=all.find(x=>x.m==m);return s?'<label class="sm"><input type="checkbox" style="width:auto" '+(WKSEL[m]===false?'':'checked')+' onchange="WKSEL['+m+']=this.checked;wkRender(true)"> Materi '+m+'</label>':'<label class="sm" style="opacity:.55"><input type="checkbox" style="width:auto" disabled> Materi '+m+' (belum ada data)</label>'}).join(' ');
+ $('wkOut').innerHTML=wkHtml();$('wkNote').textContent=all.length>1?'Laporan menggabungkan predikat dari '+all.length+' materi. Predikat tiap materi memakai KKTP materi itu sendiri.':'Untuk menggabungkan Materi lain: buka dashboard Materi lain (jika alamat situsnya sama, datanya terbaca otomatis), atau pakai tombol “Impor laporan materi lain”.'}
+function wkPrint(){const p=$('wkPrint');p.innerHTML=wkHtml();document.body.classList.add('wkp');const done=()=>{document.body.classList.remove('wkp');removeEventListener('afterprint',done)};addEventListener('afterprint',done);try{print()}catch(e){done()}}
+function wkRows(){const D=wkBuild();return{D:D,H:['No','Nama Siswa','Kelas'].concat(D.mats.map(s=>'Predikat Materi '+s.m),['Catatan']),R:D.L.map((o,i)=>[i+1,o.n,o.k].concat(D.mats.map(s=>o.p[s.m]||'Belum selesai'),[o.cat]))}}
+function wkCSV(){const x=wkRows();if(!x.D.L.length){alert('Belum ada data untuk diekspor.');return}const txt='\ufeffsep=;\r\n'+[x.H].concat(x.R).map(r=>r.map(csvCell).join(';')).join('\r\n');dl('Laporan_Wali_Kelas_'+(x.D.kel?slug(x.D.kel):'Semua_Kelas')+'_'+new Date().toISOString().slice(0,10)+'.csv','text/csv;charset=utf-8',txt)}
+function wkCopy(){const D=wkBuild();if(!D.L.length){alert('Belum ada data untuk disalin.');return}const nm=wkNm();let s='*LAPORAN PREDIKAT PEMBELAJARAN*\nMPI Matematika Kelas X • MAN 1 Boalemo\nKelas: '+(D.kel||'Semua kelas')+' • '+wkTgl()+'\n';
+ wkRekap(D).forEach(x=>{s+='\n*Materi '+x.s.m+' – '+(x.s.topik||'')+'*\nIstimewa: '+x.c.Istimewa+' • Baik: '+x.c.Baik+' • Perlu Bimbingan: '+x.c['Perlu Bimbingan']+' • Belum selesai: '+x.c.x});
+ s+='\n\n*Daftar predikat:*\n';D.L.forEach((o,i)=>{s+=(i+1)+'. '+o.n+(D.kel?'':' ('+o.k+')')+' – '+D.mats.map(m=>(D.mats.length>1?'M'+m.m+' ':'')+(o.p[m.m]||'Belum selesai')).join(' | ')+'\n'});
+ const pb=D.L.filter(o=>D.mats.some(m=>o.p[m.m]==='Perlu Bimbingan'));if(pb.length)s+='\n*Perlu pendampingan:* '+pb.map(o=>o.n).join(', ')+'\n';
+ if(nm.g)s+='\nGuru Mata Pelajaran: '+nm.g;
+ const ok=()=>alert('Teks laporan sudah disalin. Tempel di WhatsApp wali kelas.');
+ try{navigator.clipboard.writeText(s).then(ok,()=>wkCopy2(s,ok))}catch(e){wkCopy2(s,ok)}}
+function wkCopy2(s,ok){const t=document.createElement('textarea');t.value=s;t.style.position='fixed';t.style.opacity=0;document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(e){prompt('Salin teks ini:',s)}t.remove()}
+function wkExport(){const o=wkOwn();if(!Object.keys(o.rows).length){alert('Belum ada data siswa untuk diekspor.');return}dl('Predikat_Materi'+WK.n+'_'+new Date().toISOString().slice(0,10)+'.json','application/json',JSON.stringify(o))}
+function wkImport(inp){const fs=[...inp.files];let n=0,bad=0,left=fs.length;if(!left)return;
+ fs.forEach(f=>{const fr=new FileReader();fr.onload=()=>{try{const j=JSON.parse(fr.result),m=parseInt(j.m,10);if(!(m>=1&&m<=3)||m==WK.n||!j.rows||typeof j.rows!='object')throw 0;const rows={};let c=0;Object.keys(j.rows).slice(0,3000).forEach(k=>{const r=j.rows[k];if(!r||typeof r.n!='string'||typeof r.k!='string')return;const p=r.p===null||WKP.includes(r.p)?r.p:null;rows[String(k).slice(0,120)]={n:r.n.slice(0,80),k:r.k.slice(0,30),p:p};c++});if(!c)throw 0;wkSet(m,{m:m,label:'Materi '+m,topik:String(j.topik||'').slice(0,80),ts:+j.ts||Date.now(),kktp:Math.max(1,Math.min(100,parseInt(j.kktp,10)||76)),rows:rows});n++}catch(e){bad++}
+  if(--left==0){inp.value='';wkRender();alert(n+' laporan materi berhasil diimpor.'+(bad?'\n'+bad+' berkas dilewati (format tidak sesuai atau materi ini sendiri).':''))}};fr.onerror=()=>{bad++;if(--left==0){inp.value='';wkRender()}};fr.readAsText(f)})}
+
 function tchRender(){let db=dbGet(),cur=$('fCls').value,seen={},opts='<option value="">Semua kelas</option>';
  Object.values(db).forEach(r=>{let l=r.k.toLowerCase();if(!seen[l]){seen[l]=r.k}});
  Object.keys(seen).sort((a,b)=>a.localeCompare(b,'id',{numeric:true})).forEach(l=>opts+=`<option value="${esc(seen[l]).replace(/"/g,'&quot;')}">${esc(seen[l])}</option>`);
@@ -718,7 +789,7 @@ function tchRender(){let db=dbGet(),cur=$('fCls').value,seen={},opts='<option va
  if(!L.length)h+='<tr><td colspan="12" class="center sm" style="padding:18px">Belum ada data siswa. Data muncul otomatis saat siswa mengisi identitas dan belajar di perangkat ini, atau gunakan <b>Impor Data</b>.</td></tr>';
  L.forEach((o,i)=>{let r=o.r,d=r.rp==100;
   h+=`<tr><td>${i+1}</td><td>${esc(r.n)}</td><td>${esc(r.k)}</td><td>${pg(r.lp)}</td><td>${pg(r.pp)}${pqCell(r)}${pcb(r.pa)}</td><td>${pg(r.rp)}${r.rp==100?'<div class="sm">Nilai '+r.rs+'/100</div>':''}${pcb(r.ra)}</td><td class="num">${gab(r)==null?'–':fmt(gab(r))}</td><td class="num">${d?r.rs:'–'}</td><td>${d?predikat(r.rs):'–'}</td><td>${d?`<span class="pill ${r.rs>=kkm?'ok':'no'}">${r.rs>=kkm?'Tercapai':'Belum Tercapai'}</span>`:'<span class="pill wt">Belum selesai</span>'}</td><td class="sm">${fdt(r.ts)}</td><td><button class="xb" title="Hapus siswa ini" onclick="tchDel(${i})">🗑</button></td></tr>`});
- $('dtb').innerHTML=h;$('bCsv').textContent='⬇ Ekspor CSV ('+L.length+')';try{tchItems()}catch(e){}}
+ $('dtb').innerHTML=h;$('bCsv').textContent='⬇ Ekspor CSV ('+L.length+')';try{tchItems()}catch(e){}try{wkRender()}catch(e){}}
 function tchDel(i){let db=dbGet(),k=tchCur[i],r=db[k];if(!r||!confirm('Hapus data '+r.n+' ('+r.k+')?'+(GAS_ON()?'\nData siswa ini juga akan dihapus dari sheet “Hasil” di Google Sheets.':'')))return;delete db[k];dbSet(db);tchRender();cloudDel(r.n,r.k)}
 function tchReset(){if(!Object.keys(dbGet()).length)return;if(confirm('Hapus SEMUA data siswa di perangkat ini? Tindakan ini tidak dapat dibatalkan.'+(GAS_ON()?'\nSeluruh isi sheet “Hasil” di Google Sheets juga akan dihapus.':''))){dbSet({});tchRender();cloudDel()}}
 
